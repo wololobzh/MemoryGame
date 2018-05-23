@@ -14,6 +14,7 @@ Prerequis pour developper ce jeu:
 Etapes effectuees pour developper ce jeu :
 
 1 - Creation de la bdd.
+
 2 - Creation de la dao TimeDao.php puis test.
 3 - Creation du script js et du code html pour la barre de progression puis test.
 4 - Creation de l'ihm du jeu en html.
