@@ -98,7 +98,7 @@ function insertOneTime($time)
 		#On met la valeur null pour la colonne id car elle est auto incrementée.
 		$handle = $cnx->prepare("INSERT INTO times (`id`, `time`) VALUES (NULL, ?)");
 
-		#On remplace le paramètre 1 par la valeur le temps passé en paramètre de la fonction
+		#On remplace le paramètre 1 par la valeur du temps passé en paramètre de la fonction
 		$handle->bindValue(1, $time, PDO::PARAM_INT);
 
 		#On execute la requete
