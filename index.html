@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<title>Jeu de mémoire</title>
+</head>
+
+<body>
+
+<div id="titre">
+Jeu de mémoire
+</div>
+
+<div class="zoneJeu">
+	<table><!-- Tableau -->
+		<tr><!-- Lignr -->
+			<td onclick="onClickCarte('i1')"><img id="i1"/></td><!-- Colonne -->
+			<td onclick="onClickCarte('i2')"><img id="i2"/></td>
+			<td onclick="onClickCarte('i3')"><img id="i3"/></td>
+			<td onclick="onClickCarte('i4')"><img id="i4"/></td>
+			<td onclick="onClickCarte('i5')"><img id="i5"/></td>
+			<td onclick="onClickCarte('i6')"><img id="i6"/></td>
+			<td onclick="onClickCarte('i7')"><img id="i7"/></td>
+		</tr>  
+		<tr>   
+			<td onclick="onClickCarte('i8')"><img id="i8"/></td>
+			<td onclick="onClickCarte('i9')"><img id="i9"/></td>
+			<td onclick="onClickCarte('i10')"><img id="i10"/></td>
+			<td onclick="onClickCarte('i11')"><img id="i11"/></td>
+			<td onclick="onClickCarte('i12')"><img id="i12"/></td>
+			<td onclick="onClickCarte('i13')"><img id="i13"/></td>
+			<td onclick="onClickCarte('i14')"><img id="i14"/></td>
+		</tr>  
+		<tr>   
+			<td onclick="onClickCarte('i15')"><img id="i15"/></td>
+			<td onclick="onClickCarte('i16')"><img id="i16"/></td>
+			<td onclick="onClickCarte('i17')"><img id="i17"/></td>
+			<td onclick="onClickCarte('i18')"><img id="i18"/></td>
+			<td onclick="onClickCarte('i19')"><img id="i19"/></td>
+			<td onclick="onClickCarte('i20')"><img id="i20"/></td>
+			<td onclick="onClickCarte('i21')"><img id="i21"/></td>
+		</tr>  
+		<tr>   
+			<td onclick="onClickCarte('i22')"><img id="i22"/></td>
+			<td onclick="onClickCarte('i23')"><img id="i23"/></td>
+			<td onclick="onClickCarte('i24')"><img id="i24"/></td>
+			<td onclick="onClickCarte('i25')"><img id="i25"/></td>
+			<td onclick="onClickCarte('i26')"><img id="i26"/></td>
+			<td onclick="onClickCarte('i27')"><img id="i27"/></td>
+			<td onclick="onClickCarte('i28')"><img id="i28"/></td>
+		</tr>
+	</table>
+</div>
+
+<div id="barre" class="barreDeProgression">
+	<div id="progressionBarre" class="chargementBarreDeProgression"></div>
+</div>
+
+<div id="top" class="scores"/>
+
+<script type="text/javascript" src="scripts/jQuery.js"></script>
+<script type="text/javascript" src="scripts/jeu.js"></script>
+
+</body>
+
+</html>
