@@ -62,12 +62,12 @@ function miseAJourBarreDeProgression()
 {
 	console.log('Entrée dans la fonction miseAJourBarreDeProgression().');
 	//Permet d'enregistrer l'heure de début de la mise à jour. 
-    var now = new Date();
+        var now = new Date();
 	//On fait la différence entre l'heure de début du jeu et l'heure de mise à jour.
-    var timeDiff = now.getTime() - heureDebut.getTime();
+        var timeDiff = now.getTime() - heureDebut.getTime();
 	//On calcul le pourcentage de temps déja écoulé avant la fin.
 	//Ce pourcentage sera utilisé pour faire évoluer la barre de progression.
-    var perc = Math.round((timeDiff/tempsMaximal)*100);
+        var perc = Math.round((timeDiff/tempsMaximal)*100);
 	
 	//Si le pourcentage est supérieur à 100 alors on le reaffecte à 100 
 	//afin que le rouge de la progression ne dépasse pas les bordures.
@@ -79,13 +79,13 @@ function miseAJourBarreDeProgression()
 	//On fait évoluer la barre de progression.
 	$('#progressionBarre').css("width", perc + "%");
     
-	//Si le nombre de cartes trouvées est égal au nombre de cartes distribuées.
+	//Si le nombre de cartes trouvées est égal au nombre de cartes distribuées avant la fin du temps maximal.
 	if(perc < 100 && nombreImages == nombreReussite)
 	{
 		//On execute les actions à réaliser lorsque le joueur gagne.
 		gagne(timeDiff);		
 	}
-	//Si le nombre de cartes trouvées est différent au nombre de cartes distribuées lorsque le temps max est terminé.
+	//Si le nombre de cartes trouvées est différent du nombre de cartes distribuées lorsque le temps max est terminé.
 	else if(perc >= 100 && nombreImages != nombreReussite)
 	{
 	    //On execute les actions à réaliser lorsque le joueur perd.
