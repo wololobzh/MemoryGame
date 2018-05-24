@@ -9,13 +9,13 @@ var tempsMaximal = null;
 //Permet de determiner le début de la partie.
 var partieCommencee = null;
 
-//Initialisation des variables
+//Initialisation des variables.
 initialisation();
 
-//Permet d'afficher les résultats
+//Permet d'afficher les résultats.
 afficherResultats();
 
-//Permet de distribuer les cartes
+//Permet de distribuer les cartes.
 distribuerCartes();
 
 
@@ -27,7 +27,7 @@ function initialisation()
 {
 	nombreReussite = 0; // 0 carte découverte.
 	tempsMaximal = 300000;  //5 minutes.
-	partieCommencee = false; //La partie n'a pas encore commencée
+	partieCommencee = false; //La partie n'a pas encore commencée.
 	nombreImages = 28; //28 cartes seront distribuées.
 }
 
@@ -48,7 +48,7 @@ function perdu()
 function gagne(temps)
 {
 	console.log('Entrée dans la fonction gagne(temps). temps = ' . temps);
-	//On insere le temps en bdd.
+	//On insère le temps en bdd.
 	insererResultat(temps);
 	alert('Vous avez gagnéééééééééé !');
 	//On recharge la page.
@@ -82,16 +82,16 @@ function miseAJourBarreDeProgression()
 	//Si le nombre de cartes trouvées est égal au nombre de cartes distribuées avant la fin du temps maximal.
 	if(perc < 100 && nombreImages == nombreReussite)
 	{
-		//On execute les actions à réaliser lorsque le joueur gagne.
+		//On exécute les actions à réaliser lorsque le joueur gagne.
 		gagne(timeDiff);		
 	}
 	//Si le nombre de cartes trouvées est différent du nombre de cartes distribuées lorsque le temps max est terminé.
 	else if(perc >= 100 && nombreImages != nombreReussite)
 	{
-	    //On execute les actions à réaliser lorsque le joueur perd.
+	        //On exécute les actions à réaliser lorsque le joueur perd.
 		perdu();
 	}
-	//Sinon on réexecute cette fonction dans 500 ms afin de faire progresser la barre de progression.
+	//Sinon on réexécute cette fonction dans 500 ms afin de faire progresser la barre de progression.
 	else
 	{
 		 setTimeout(miseAJourBarreDeProgression, 500);
@@ -99,16 +99,16 @@ function miseAJourBarreDeProgression()
 }
 
 /**
-* Cette fonction permet d'insérer un resultat dans la bdd.
+* Cette fonction permet d'insérer un résultat dans la bdd.
 */
 function insererResultat(temps)
 {
 	console.log('Entrée dans la fonction insererResultat(temps). temps = ' . temps);
 	//Permet d'enregistrer le temps effectué par le joueur gagnant. (Utilisation de JQuery & Ajax)
 	$.ajax({
-	   url : 'TimeDao.php', // La ressource ciblée
+	   url : 'TimeDao.php', // La ressource ciblée.
 	   type : 'POST', // Le type de la requête HTTP.
-	   data : 'time=' + temps // Un paramètre
+	   data : 'time=' + temps // Un paramètre.
 	});
 }
 
@@ -140,7 +140,8 @@ function distribuerCartes()
 				var position = Math.floor(Math.random() * nombreImages + 1);
 				//Récupération de l'image chargée à cette position.
 				var objetImage = document.getElementById('i' + position);	
-			}while(objetImage.src != '');//Si une image est déja chargée alors on recommence la manoeuvre jusqu'a ce que l'on trouve une position vide.
+			}while(objetImage.src != '');//Si une image est déja chargée alors on recommence la manoeuvre 
+						     //jusqu'a ce que l'on trouve une position vide.
 			//Une fois une position vide trouvée on charge une image dans celle ci.
 			objetImage.src = 'images/' + image + '.png';
 			//Et on rend invisible l'image.
@@ -178,16 +179,17 @@ function onClickCarte(image)
 	//Et que la carte selectionné est invisible.
 	if(carteUneRetournee == null && objetImage.style.display == 'none')
 	{
-		//On stocke les informatiosn de cette carte dans la variable 'carteUneRetournee' afin de l'analyser lorsque deux cartes seront retournées.
+		//On stocke les informations de cette carte dans la variable 'carteUneRetournee' afin 
+		//de l'analyser lorsque deux cartes seront retournées.
 		carteUneRetournee = objetImage;
 		//On la rend visible.
 		carteUneRetournee.style.display = '';
 	}
-	//On regarde si c'est la deuxième carte de la paire de carte à testet.
+	//On regarde si c'est la deuxième carte de la paire de carte à tester.
 	//Et que la carte selectionné est invisible.
 	else if(carteDeuxRetournee == null && objetImage.style.display == 'none')
 	{
-		//On stocke les informatiosn de cette carte dans la variable 'carteDeuxRetournee' afin de l'analyser.
+		//On stocke les informations de cette carte dans la variable 'carteDeuxRetournee' afin de l'analyser.
 		carteDeuxRetournee = objetImage;
 		//On la rend visible.
 		carteDeuxRetournee.style.display = '';
@@ -198,7 +200,7 @@ function onClickCarte(image)
 
 /**
 * Fonction permettant de vérifier si deux cartes sont identiques ou non
-* et d'effectuer les actions necessaires selon le resultat.
+* et d'effectuer les actions nécessaires selon le résultat.
 */
 function isIdentique()
 {
