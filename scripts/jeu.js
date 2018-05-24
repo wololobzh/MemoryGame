@@ -184,6 +184,8 @@ function onClickCarte(image)
 		carteUneRetournee = objetImage;
 		//On la rend visible.
 		carteUneRetournee.style.display = '';
+		//Et on met la couleur de fond de la zone des cartes en blanc.
+		carteDeuxRetournee.parentElement.style.backgroundColor = '#FFFFFF';
 	}
 	//On regarde si c'est la deuxième carte de la paire de carte à tester.
 	//Et que la carte selectionné est invisible.
@@ -193,6 +195,8 @@ function onClickCarte(image)
 		carteDeuxRetournee = objetImage;
 		//On la rend visible.
 		carteDeuxRetournee.style.display = '';
+		//Et on met la couleur de fond de la zone des cartes en blanc.
+		carteDeuxRetournee.parentElement.style.backgroundColor = '#FFFFFF';
 		//On attend une demi seconde avant d'analyser les deux cartes.
 		setTimeout(isIdentique, 500);
 	}
@@ -217,6 +221,9 @@ function isIdentique()
 			//sinon les deux cartes retournées redeviennent invisibles.
 			carteUneRetournee.style.display = 'none';
 			carteDeuxRetournee.style.display = 'none';
+			//Et on met la couleur de fond de la zone des cartes en gris.
+			carteUneRetournee.parentElement.style.backgroundColor = '#9E9E9E';
+			carteDeuxRetournee.parentElement.style.backgroundColor = '#9E9E9E';
 		}
 		
 		//On remet les variables permettant d'identifier les cartes en cours d'analyse à null.
