@@ -185,7 +185,7 @@ function onClickCarte(image)
 		//On la rend visible.
 		carteUneRetournee.style.display = '';
 		//Et on met la couleur de fond de la zone des cartes en blanc.
-		carteDeuxRetournee.parentElement.style.backgroundColor = '#FFFFFF';
+		carteUneRetournee.parentElement.style.backgroundColor = '#FFFFFF';
 	}
 	//On regarde si c'est la deuxième carte de la paire de carte à tester.
 	//Et que la carte selectionné est invisible.
